@@ -7,6 +7,8 @@ var path = require('path');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer'); 
 var minify = require('gulp-minify-css'); 
+var mocha = require('gulp-mocha');
+var util = require('gulp-util');
 
 gulp.task('default', function () {
 
@@ -17,5 +19,11 @@ gulp.task('default', function () {
 	.pipe(gulp.dest('./css'));
 
 });
+ 
+gulp.task('test', function () {
+    return gulp.src(['tests/tests/**/*.js'], { read: false })
+        .pipe(mocha({ reporter: 'spec' }))
+        .on('error', util.log);
+});
 
-gulp.watch('less/**/*.less', ['default']);
+//gulp.watch('less/**/*.less', ['default']);
