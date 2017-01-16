@@ -9,6 +9,8 @@ Taking my first steps with gulp. This gulpfile does five things:
 - Minifies it
 - And outputs it to the `/css` directory.
 
+Compare `/less/base.less` to `/css/base.css` to see the difference between the original input and final output.
+
 It also can run in `watch` mode and automatically run whenever a LESS file changes.
 
 ## Quickstart
